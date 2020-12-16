@@ -143,7 +143,7 @@ func closeConnection(conn net.Conn, clientName string) {
 	if err != nil {
 		log.Println("La déconnexion a échoué")
 	}
-	log.Println("Connexion avec l'adresse: " + conn.RemoteAddr().String() + " fermée.")
+	log.Println("Déconnexion avec l'adresse: " + conn.RemoteAddr().String() + " fermée.")
 
 	lock.Lock()
 	delete(clients, clientName)
