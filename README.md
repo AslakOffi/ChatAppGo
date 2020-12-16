@@ -20,3 +20,7 @@ Pour démarrer un nouveau client :
 ```go
 go run client/client.go
 ```
+
+## HexalLuna
+
+Vous pouvez voir plusieurs projets sur le github de mon entreprise [ici](https://github.com/HexalLuna)
