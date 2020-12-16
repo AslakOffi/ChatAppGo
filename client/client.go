@@ -86,7 +86,7 @@ func uiReceiveMessagesRoutine(conn net.Conn, ui tui.UI, messageArea *tui.Box) {
 	for {
 		message, err := receiveMessage(conn)
 		if err != nil {
-			message = "Vous vous êtes déconnecté du serveur, vous ne recevez plus de messages."
+			message = "Vous vous êtes déconnecté du serveur, vous ne recevrez plus de messages."
 			ui.Update(func() {
 				messageArea.Append(tui.NewHBox(tui.NewLabel(message), tui.NewSpacer()))
 			})
