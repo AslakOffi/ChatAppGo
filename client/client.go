@@ -22,13 +22,13 @@ func startClientUI(serverIp string, port string) {
 }
 
 func openConnection(serverIp string, port string) (conn net.Conn) {
-	log.Println("Opening connection...")
+	log.Println("Connexion en cours...")
 	addr := serverIp + ":" + port
 	conn, err := net.Dial("tcp", addr)
 	if err != nil {
-		log.Fatal("Dialing " + addr + " failed.")
+		log.Fatal("Connexion: " + addr + " a échoué.")
 	}
-	log.Println("Connection open.")
+	log.Println("Connexion établie.")
 	return
 }
 
@@ -54,7 +54,7 @@ func initUI(conn net.Conn) (tui.UI, *tui.Box) {
 		message := e.Text()
 		err := sendMessage(conn, message)
 		if err != nil {
-			message = "You are not connected to the server, you can not send messages."
+			message = "Vous n’êtes pas connecté au serveur, vous ne pouvez pas envoyer de messages."
 			messageArea.Append(tui.NewHBox(tui.NewLabel(message), tui.NewSpacer()))
 		}
 		input.SetText("")
@@ -79,7 +79,7 @@ func uiReceiveMessagesRoutine(conn net.Conn, ui tui.UI, messageArea *tui.Box) {
 	for {
 		message, err := receiveMessage(conn)
 		if err != nil {
-			message = "You disconnected from the server, you are no longer receiving messages."
+			message = "Vous vous êtes déconnecté du serveur, vous ne recevez plus de messages."
 			ui.Update(func() {
 				messageArea.Append(tui.NewHBox(tui.NewLabel(message), tui.NewSpacer()))
 			})
@@ -109,20 +109,20 @@ func receiveMessage(conn net.Conn) (message string, err error) {
 }
 
 func closeConnection(conn net.Conn) {
-	log.Println("Closing connection...")
+	log.Println("Déconnexion en cours...")
 	err := conn.Close()
 	if err != nil {
-		log.Println("Failed to close connection.")
+		log.Println("La déconnexion a échoué")
 	}
-	log.Println("Connection closed.")
+	log.Println("Déconnexion réussie")
 }
 
 func main() {
 	var serverIp string
 	var port string
 
-	flag.StringVar(&serverIp, "ip", "127.0.0.1", "IP address of chat server")
-	flag.StringVar(&port, "port", "8001", "port where chat server is listening for new connections")
+	flag.StringVar(&serverIp, "ip", "127.0.0.1", "Adresse IP du serveur de chat")
+	flag.StringVar(&port, "port", "8001", "Port du serveur de chat")
 	flag.Parse()
 
 	startClientUI(serverIp, port)
