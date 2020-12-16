@@ -34,7 +34,7 @@ func listen(port string) (net.Listener, error) {
 	if err != nil {
 		return nil, fmt.Errorf("\nimpossible de trouver le port: %s en raison d'une erreur: %v", port, err)
 	}
-	log.Println("Ecoute sur adresse: " + ln.Addr().String())
+	log.Println("Ecoute sur l'adresse: " + ln.Addr().String())
 	return ln, nil
 }
 
