@@ -23,4 +23,4 @@ go run client/client.go
 
 ## HexalLuna
 
-Vous pouvez voir plusieurs projets sur le github de mon entreprise [ici](https://github.com/HexalLuna).
+Vous pouvez voir plusieurs projets sur le github de mon organisation [ici](https://github.com/HexalLuna).
