@@ -2,7 +2,6 @@
 
 /*
 	author: AslakOffi
-	company: HexalLuna | https://github.com/HexalLuna
 */
 
 package main
