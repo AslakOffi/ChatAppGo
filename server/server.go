@@ -4,6 +4,7 @@
 	author: AslakOffi
 */
 
+
 package main
 
 import (
@@ -186,5 +187,3 @@ func main() {
 		log.Fatal(err)
 	}
 }
-
-
