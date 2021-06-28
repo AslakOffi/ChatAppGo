@@ -4,7 +4,6 @@
 	author: AslakOffi
 */
 
-
 package main
 
 import (
