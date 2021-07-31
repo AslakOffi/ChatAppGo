@@ -1,5 +1,4 @@
 // Merci de ne pas voler le code mais de le forked. Bonne utilisation !
-
 /*
 	author: AslakOffi
 */
