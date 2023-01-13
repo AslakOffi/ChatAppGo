@@ -1,5 +1,10 @@
 # ChatAppGo
 
+# Sorry for the maintenance
+
+Sorry for the maintenace, the project is based on some packages that are no longer maintained, so it may not work properly or at all over time. I'll probably do a next chat.
+
+
 ## Installation
 
 ```go
